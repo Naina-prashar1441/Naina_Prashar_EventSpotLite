@@ -7,8 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import checkValidData from "../utils/validate";
 
-// import { useDispatch } from "react-redux";
-// import { setUser } from "./UserSlice";
+
 
 const style = {
   position: "absolute",
@@ -16,7 +15,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 450,
-  backgroundColor: "transparent", // Semi-transparent background
+  backgroundColor: "transparent", 
   backdropFilter: "blur(5px)",
   boxShadow: 80,
   zIndex: 100,
@@ -29,19 +28,15 @@ const LoginModal = ({ setShowLoginModal }) => {
     setShowLoginModal(false);
   };
 
-  const [email, setEmail] = useState("abhig05020@gmail.com");
-  const [signInPassword, setSignInPassword] = useState("Sainath@1411");
+  const [email, setEmail] = useState("naina@gmail.com");
+  const [signInPassword, setSignInPassword] = useState("Naina@1411");
   const [errorMessage, setErrorMessage] = useState(null);
-  const [name, setName] = useState("Abhinav");
+  const [name, setName] = useState("Naina");
 
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname;
-  // console.log(emailId);
-  // console.log(signInPassword);
-
-  //   const dispatch = useDispatch();
-
+  
   const [isSignInForm, setIsSignInForm] = useState(true);
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -57,9 +52,7 @@ const LoginModal = ({ setShowLoginModal }) => {
     if (!isSignInForm) {
       createUserWithEmailAndPassword(auth, email, signInPassword)
         .then((userCredential) => {
-          // Signed up
-          // const user = userCredential.user;
-          // ...
+          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -71,15 +64,13 @@ const LoginModal = ({ setShowLoginModal }) => {
     } else {
       signInWithEmailAndPassword(auth, email, signInPassword)
         .then((userCredential) => {
-          // Signed in
-          // const user = userCredential.user;
-          // ...
+          
           navigate(from || "/mainpage");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          // setErrorMessage(errorCode + "--" + errorMessage);
+         
           setErrorMessage("Not a valid user or Email/Password is incorrect");
         });
     }
@@ -95,9 +86,7 @@ const LoginModal = ({ setShowLoginModal }) => {
             </h1>
             {!isSignInForm && (
               <div>
-                {/* <h4 className="text-[22px] text-white font-semibold mt-11 text-center">
-                  Enter Your Name
-                </h4> */}
+                
                 <input
                 type="text"
                 className="my-4 mx-5 ml-8 text-center px-[60px] py-[11px] w-[88%] bg-transparent border border-white text-white text-[19px] border-b-white rounded-sm"
@@ -111,9 +100,7 @@ const LoginModal = ({ setShowLoginModal }) => {
               </div>
             )}
             <div className="flex-col">
-              {/* <h4 className="text-[22px] text-white font-semibold mt-3 text-center">
-                Username
-              </h4> */}
+              
               <input
                 type="text"
                 className="my-4 mx-5 ml-8 text-center w-[88%] px-[60px] py-[11px] bg-transparent border border-white text-white text-[19px] border-b-white rounded-sm"
@@ -124,9 +111,7 @@ const LoginModal = ({ setShowLoginModal }) => {
                   setEmail(e.target.value);
                 }}
               />
-              {/* <h4 className="text-[22px] text-white font-semibold mt-1 text-center">
-                Password
-              </h4> */}
+              
               <input
                 className="my-4 mx-5 ml-8 px-[60px] py-[11px] w-[88%] bg-transparent border border-white text-white text-[19px] border-white text-center rounded-sm"
                 type="password"

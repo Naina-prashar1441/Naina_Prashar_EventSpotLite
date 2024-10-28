@@ -1,0 +1,79 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff; 
+    z-index: 10; 
+  }
+  
+  
+  .header-content {
+    display: flex;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    margin: 0.75rem 0;
+    margin-left: 2.75rem;
+    border-radius: 1.5rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .profile-image:hover {
+    background-color: #ddeef4;
+    color: white;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2.75rem;
+    width: 100%;
+  }
+  
+  .title {
+    font-size: 3.75rem; /* Font size */
+  font-weight: bold; /* Bold font */
+  color: #063a87; /* Dark gray color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow */
+  letter-spacing: 2px; /* Space between letters */
+  transition: color 0.3s;
+  }
+
+  .title:hover {
+    color: #5c5e5f; /* Change color on hover */
+  }
+  
+  .button-group {
+    display: flex;
+  }
+  
+  .location-button,
+  .sign-in-button {
+    padding: 11px;
+    margin-right: 70px;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid #063a87;
+    cursor: pointer;
+    font-size: larger;
+    color: #063a87;
+  }
+  
+  .location-button:hover,
+  .sign-in-button:hover {
+    background-color: #dfe9ee; 
+  color: rgb(85, 84, 84);
+  }
+  
+  
